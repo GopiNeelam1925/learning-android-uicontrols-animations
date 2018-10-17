@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab3 M18 - Kevin Ma</string>
+
+    <!--main/launcher activity-->
+    <string name="main_menu_instructions">Select exercises to demonstrate: </string>
+    <string-array name="main_menu_exercise_list">
+        <item>Exercise 1</item>
+        <item>Exercise 2</item>
+        <item>Exercise 3</item>
+    </string-array>
+</resources>
