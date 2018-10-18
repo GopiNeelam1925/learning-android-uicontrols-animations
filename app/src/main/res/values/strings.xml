@@ -23,4 +23,7 @@
     <string name="ex1_draw_up_msg">"You are at the top edge of the screen already! Cannot go further up!"</string>
     <string name="ex1_draw_right_msg">"You are at the right edge of the screen already! Cannot go further right!"</string>
     <string name="ex1_draw_down_msg">"You are at the bottom edge of the screen already! Cannot go further down!"</string>
+    <string name="ex1_red_line_col_radio_btn">Red</string>
+    <string name="ex1_yellow_line_col_radio_btn">Yellow</string>
+    <string name="ex1_cyan_line_col_radio_btn">Cyan</string>
 </resources>

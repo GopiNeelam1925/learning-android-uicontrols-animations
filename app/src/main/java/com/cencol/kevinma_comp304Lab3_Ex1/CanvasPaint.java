@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -132,6 +134,10 @@ public class CanvasPaint extends AppCompatActivity {
 
         this._clearCanvas();
 
+        // default configs selected
+        RadioButton redLineColorRadioBtn = findViewById(R.id.redLineColorRadioBtn);
+        redLineColorRadioBtn.setChecked(true);
+
         // attach event handlers
         findViewById(R.id.rightArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -168,13 +174,31 @@ public class CanvasPaint extends AppCompatActivity {
                 CanvasPaint.this._clearCanvas();
             }
         });
+
+        RadioGroup lineColorRadioGroup = findViewById(R.id.lineColorRadioGroup);
+        lineColorRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int idChecked) {
+                switch (idChecked) {
+                    case R.id.redLineColorRadioBtn:
+                        CanvasPaint.this._paint.setColor(Color.RED);
+                        break;
+                    case R.id.cyanLineColorRadioBtn:
+                        CanvasPaint.this._paint.setColor(Color.YELLOW);
+                        break;
+                    case R.id.yellowLineColorRadioBtn:
+                        CanvasPaint.this._paint.setColor(Color.CYAN);
+                        break;
+                }
+            }
+        });
     }
 
     private void _startDrawing() {
         this._canvas.drawPoint(0, 0, this._paint);
     }
 
-    private void _clearCanvas(){
+    private void _clearCanvas() {
         this._canvas.drawColor(Color.WHITE);
         this._curXPos = this._curYPos = 0;
         this._startDrawing();
