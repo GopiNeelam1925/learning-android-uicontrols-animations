@@ -3,9 +3,20 @@
 
     <!--main/launcher activity-->
     <string name="main_menu_instructions">Select exercises to demonstrate: </string>
+    <string name="ex1">Exercise 1</string>
+    <string name="ex2">Exercise 2</string>
+    <string name="ex3">Exercise 3</string>
     <string-array name="main_menu_exercise_list">
-        <item>Exercise 1</item>
-        <item>Exercise 2</item>
-        <item>Exercise 3</item>
+        <item>@string/ex1</item>
+        <item>@string/ex2</item>
+        <item>@string/ex3</item>
     </string-array>
+    <string name="main_menu_clicked_msg">"Clicked on "</string>
+
+    <!--ex1 canvas paint activity-->
+    <string name="cpa_label">Lab3 Ex1 M18 - Kevin Ma</string>
+    <string name="cpa_header1">Line Thickness</string>
+    <string name="cpa_header2">Line Color</string>
+    <string name="cpa_header3">Arrow Keys</string>
+    <string name="cpa_btn_txt">CLEAR CANVAS</string>
 </resources>

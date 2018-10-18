@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.cencol.kevinma_comp304Lab3_Ex1.CanvasPaint"
+            android:label="@string/cpa_label"/>
     </application>
 
 </manifest>
