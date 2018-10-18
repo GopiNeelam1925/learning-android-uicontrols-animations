@@ -118,8 +118,6 @@ public class CanvasPaint extends AppCompatActivity {
                 .getDefaultDisplay().getHeight(), Bitmap.Config.ARGB_8888);
 
         this._canvas = new Canvas(this._bitmap);
-        // background color
-        this._canvas.drawColor(Color.WHITE);
 
         this._imageViewForDrawing = findViewById(R.id.imageViewForDrawing);
         this._imageViewForDrawing.setImageBitmap(this._bitmap);
@@ -128,12 +126,11 @@ public class CanvasPaint extends AppCompatActivity {
         this._xPosTextView = findViewById(R.id.xPosTextView);
         this._yPosTextView = findViewById(R.id.yPosTextView);
 
-        this._curXPos = this._curYPos = 0;
         this._xIncrement = getResources().getInteger(R.integer.ex1_x_pos_increment);
         this._yIncrement = getResources().getInteger(R.integer.ex1_y_pos_increment);
         this._noIncrement = getResources().getInteger(R.integer.ex1_no_pos_increment);
-        this._xPosTextView.setText("X: " + this._curXPos);
-        this._yPosTextView.setText("Y: " + this._curYPos);
+
+        this._clearCanvas();
 
         // attach event handlers
         findViewById(R.id.rightArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
@@ -164,10 +161,25 @@ public class CanvasPaint extends AppCompatActivity {
                 return true;
             }
         });
+
+        findViewById(R.id.clearCanvasBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CanvasPaint.this._clearCanvas();
+            }
+        });
     }
 
-    private void _startDrawing(View v) {
+    private void _startDrawing() {
         this._canvas.drawPoint(0, 0, this._paint);
+    }
+
+    private void _clearCanvas(){
+        this._canvas.drawColor(Color.WHITE);
+        this._curXPos = this._curYPos = 0;
+        this._startDrawing();
+        this._xPosTextView.setText("X: " + this._curXPos);
+        this._yPosTextView.setText("Y: " + this._curYPos);
     }
 
     private void _drawLine(Canvas canvas, int xIncrement, int yIncrement) {
