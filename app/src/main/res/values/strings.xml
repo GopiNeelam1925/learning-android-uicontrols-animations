@@ -19,4 +19,8 @@
     <string name="cpa_header2">Line Color</string>
     <string name="cpa_header3">Arrow Keys</string>
     <string name="cpa_btn_txt">CLEAR CANVAS</string>
+    <string name="ex1_draw_left_msg">"You are at the left edge of the screen already! Cannot go further left!"</string>
+    <string name="ex1_draw_up_msg">"You are at the top edge of the screen already! Cannot go further up!"</string>
+    <string name="ex1_draw_right_msg">"You are at the right edge of the screen already! Cannot go further right!"</string>
+    <string name="ex1_draw_down_msg">"You are at the bottom edge of the screen already! Cannot go further down!"</string>
 </resources>

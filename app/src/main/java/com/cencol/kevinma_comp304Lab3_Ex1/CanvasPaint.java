@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,42 +50,62 @@ public class CanvasPaint extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_DOWN:
-
-                if (this._curYPos + this._yIncrement > this._bitmap.getHeight()) {
-                    Toast.makeText(this, "You are at the bottom edge of the screen already! Cannot go further down!", Toast.LENGTH_SHORT).show();
-                } else {
-                    this._drawLine(this._canvas, this._noIncrement, this._yIncrement);
-                }
+                this._drawLineDown();
                 return true;
 
             case KeyEvent.KEYCODE_DPAD_LEFT:
-                if (this._curXPos - this._xIncrement < 0) {
-                    Toast.makeText(this, "You are at the left edge of the screen already! Cannot go further left!", Toast.LENGTH_SHORT).show();
-                } else {
-                    this._drawLine(this._canvas, -this._xIncrement, this._noIncrement);
-                }
+                this._drawLineLeft();
                 return true;
 
             case KeyEvent.KEYCODE_DPAD_UP:
-                if (this._curYPos - this._yIncrement < 0) {
-                    Toast.makeText(this, "You are at the top edge of the screen already! Cannot go further up!", Toast.LENGTH_SHORT).show();
-                } else {
-                    this._drawLine(this._canvas, this._noIncrement, -this._yIncrement);
-                }
+                this._drawLineUp();
                 return true;
 
             case KeyEvent.KEYCODE_DPAD_RIGHT:
-                if (this._curXPos + this._xIncrement > this._bitmap.getWidth()) {
-                    Toast.makeText(this, "You are at the right edge of the screen already! Cannot go further right!", Toast.LENGTH_SHORT).show();
-                } else {
-                    this._drawLine(this._canvas, this._xIncrement, this._noIncrement);
-                }
+                this._drawLineRight();
                 return true;
         }
         return false;
     }
 
     // helper methods
+    private void _drawLineLeft() {
+        if (this._curXPos - this._xIncrement < 0) {
+            Toast.makeText(this, getResources().getString(R.string.ex1_draw_left_msg), Toast.LENGTH_SHORT).show();
+        } else {
+            this._drawLine(this._canvas, -this._xIncrement, this._noIncrement);
+            this._imageViewForDrawing.invalidate();
+        }
+    }
+
+    private void _drawLineUp() {
+        if (this._curYPos - this._yIncrement < 0) {
+            Toast.makeText(this, getResources().getString(R.string.ex1_draw_up_msg), Toast.LENGTH_SHORT).show();
+        } else {
+            this._drawLine(this._canvas, this._noIncrement, -this._yIncrement);
+            this._imageViewForDrawing.invalidate();
+        }
+    }
+
+    private void _drawLineRight() {
+        if (this._curXPos + this._xIncrement > this._bitmap.getWidth()) {
+            Toast.makeText(this, getResources().getString(R.string.ex1_draw_right_msg), Toast.LENGTH_SHORT).show();
+        } else {
+            this._drawLine(this._canvas, this._xIncrement, this._noIncrement);
+            // force redraw/update canvas
+            this._imageViewForDrawing.invalidate();
+        }
+    }
+
+    private void _drawLineDown() {
+        if (this._curYPos + this._yIncrement > this._bitmap.getHeight()) {
+            Toast.makeText(this, getResources().getString(R.string.ex1_draw_down_msg), Toast.LENGTH_SHORT).show();
+        } else {
+            this._drawLine(this._canvas, this._noIncrement, this._yIncrement);
+            this._imageViewForDrawing.invalidate();
+        }
+    }
+
     private void _init() {
         // set up Paint config
         this._paint = new Paint();
@@ -113,6 +134,36 @@ public class CanvasPaint extends AppCompatActivity {
         this._noIncrement = getResources().getInteger(R.integer.ex1_no_pos_increment);
         this._xPosTextView.setText("X: " + this._curXPos);
         this._yPosTextView.setText("Y: " + this._curYPos);
+
+        // attach event handlers
+        findViewById(R.id.rightArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                CanvasPaint.this._drawLineRight();
+                return true;
+            }
+        });
+        findViewById(R.id.upArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                CanvasPaint.this._drawLineUp();
+                return true;
+            }
+        });
+        findViewById(R.id.leftArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                CanvasPaint.this._drawLineLeft();
+                return true;
+            }
+        });
+        findViewById(R.id.downArrowKeyBtn).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                CanvasPaint.this._drawLineDown();
+                return true;
+            }
+        });
     }
 
     private void _startDrawing(View v) {
