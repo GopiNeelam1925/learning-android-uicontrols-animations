@@ -24,9 +24,10 @@
                 android:text="@string/cpa_header1" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/lineThicknessSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/ex1_line_thickness_array" />
         </LinearLayout>
 
         <LinearLayout

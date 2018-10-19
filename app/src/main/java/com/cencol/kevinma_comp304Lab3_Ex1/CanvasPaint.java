@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -190,6 +193,18 @@ public class CanvasPaint extends AppCompatActivity {
                         CanvasPaint.this._paint.setColor(Color.CYAN);
                         break;
                 }
+            }
+        });
+
+        Spinner lineThicknessSpinner = findViewById(R.id.lineThicknessSpinner);
+        lineThicknessSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                CanvasPaint.this._paint.setStrokeWidth(Integer.parseInt(getResources().getStringArray(R.array.ex1_line_thickness_array)[position]));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
     }

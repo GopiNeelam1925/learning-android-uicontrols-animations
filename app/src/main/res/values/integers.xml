@@ -5,4 +5,5 @@
     <integer name="ex1_x_pos_increment">5</integer>
     <integer name="ex1_y_pos_increment">5</integer>
     <integer name="ex1_no_pos_increment">0</integer>
+
 </resources>
