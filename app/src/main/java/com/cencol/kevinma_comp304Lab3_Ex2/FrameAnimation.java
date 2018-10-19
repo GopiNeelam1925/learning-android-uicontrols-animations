@@ -39,17 +39,17 @@ public class FrameAnimation extends AppCompatActivity {
     private void _startAnimation() {
         ImageView imgView = findViewById(R.id.imageViewForAnimation);
         Drawable[] frames = new Drawable[11];
-        frames[0] = getResources().getDrawable(R.drawable.frame0);
-        frames[1] = getResources().getDrawable(R.drawable.frame1);
-        frames[2] = getResources().getDrawable(R.drawable.frame2);
-        frames[3] = getResources().getDrawable(R.drawable.frame3);
-        frames[4] = getResources().getDrawable(R.drawable.frame4);
-        frames[5] = getResources().getDrawable(R.drawable.frame5);
-        frames[6] = getResources().getDrawable(R.drawable.frame6);
-        frames[7] = getResources().getDrawable(R.drawable.frame7);
-        frames[8] = getResources().getDrawable(R.drawable.frame8);
-        frames[9] = getResources().getDrawable(R.drawable.frame9);
-        frames[10] = getResources().getDrawable(R.drawable.frame10);
+        frames[0] = getDrawable(R.drawable.frame0);
+        frames[1] = getDrawable(R.drawable.frame1);
+        frames[2] = getDrawable(R.drawable.frame2);
+        frames[3] = getDrawable(R.drawable.frame3);
+        frames[4] = getDrawable(R.drawable.frame4);
+        frames[5] = getDrawable(R.drawable.frame5);
+        frames[6] = getDrawable(R.drawable.frame6);
+        frames[7] = getDrawable(R.drawable.frame7);
+        frames[8] = getDrawable(R.drawable.frame8);
+        frames[9] = getDrawable(R.drawable.frame9);
+        frames[10] = getDrawable(R.drawable.frame10);
 
         this._frameAnimation = new AnimationDrawable();
         // infinitely loop
@@ -57,17 +57,16 @@ public class FrameAnimation extends AppCompatActivity {
 
         //add all frames to animation
         for (Drawable frame : frames) {
-//            this._frameAnimation.addFrame(frame, 200);
             this._frameAnimation.addFrame(frame, getResources().getInteger(R.integer.animation_duration));
         }
 
         imgView.setBackgroundDrawable(this._frameAnimation);
         this._frameAnimation.start();
-        Toast.makeText(this, "Starting animation", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.starting_anim_txt), Toast.LENGTH_SHORT).show();
     }
 
     private void _stopAnimation() {
         this._frameAnimation.stop();
-        Toast.makeText(this, "Stopping animation", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.stopping_anim_txt), Toast.LENGTH_SHORT).show();
     }
 }

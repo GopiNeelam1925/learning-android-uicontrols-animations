@@ -25,3 +25,8 @@ In this exercise you will create a tweened animation similar to TweenActivity fr
 | **Declaring resources** in proper resource files|5%|
 | **Innovative features**|5%|
 | **Total**|**100%**|
+
+## Resources Used
+- [Picture for Ex2 Frame by Frame animation](https://www.deviantart.com/blueberrybases/art/Animated-Base-Series-1-Frames-264203363)
+- [Earth png](https://www.kisspng.com/png-earth-globe-world-map-earth-247625/download-png.html)
+- [Moon png](http://pngimg.com/uploads/moon/moon_PNG20.png)

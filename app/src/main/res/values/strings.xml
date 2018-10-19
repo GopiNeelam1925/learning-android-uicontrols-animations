@@ -41,4 +41,10 @@
     <string name="ex2_title_label">Lab3 Ex2 M18 - Kevin Ma</string>
     <string name="start_anim_txt">Start Animation</string>
     <string name="stop_anim_txt">Stop Animation</string>
+
+    <!--ex3 tween animation-->
+    <string name="ex3_title_label">Lab3 Ex3 M18 - Kevin Ma</string>
+    <string name="starting_anim_txt">Starting animation</string>
+    <string name="stopping_anim_txt">Stopping animation</string>
+
 </resources>

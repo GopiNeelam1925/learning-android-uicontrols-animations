@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.cencol.kevinma_comp304Lab3_Ex1.CanvasPaint;
 import com.cencol.kevinma_comp304Lab3_Ex2.FrameAnimation;
+import com.cencol.kevinma_comp304Lab3_Ex3.TweenAnimation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Exercise 3":
                         Toast.makeText(MainActivity.this, getResources().getString(R.string.main_menu_clicked_msg) + getResources().getString(R.string.ex3), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(view.getContext(), TweenAnimation.class));
                         break;
                 }
             }

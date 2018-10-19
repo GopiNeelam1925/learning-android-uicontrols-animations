@@ -20,9 +20,14 @@
             android:name="com.cencol.kevinma_comp304Lab3_Ex1.CanvasPaint"
             android:label="@string/cpa_label"
             android:parentActivityName=".MainActivity" />
-        <activity android:name="com.cencol.kevinma_comp304Lab3_Ex2.FrameAnimation"
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab3_Ex2.FrameAnimation"
             android:label="@string/ex2_title_label"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab3_Ex3.TweenAnimation"
+            android:label="@string/ex3_title_label"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
