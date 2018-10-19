@@ -6,4 +6,6 @@
     <integer name="ex1_y_pos_increment">5</integer>
     <integer name="ex1_no_pos_increment">0</integer>
 
+    <!--ex2-->
+    <integer name="animation_duration">300</integer>
 </resources>

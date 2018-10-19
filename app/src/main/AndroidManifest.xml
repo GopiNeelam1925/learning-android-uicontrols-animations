@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cencol.kevinma_comp304Lab3_Ex1.CanvasPaint"
-            android:label="@string/cpa_label"/>
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab3_Ex1.CanvasPaint"
+            android:label="@string/cpa_label"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name="com.cencol.kevinma_comp304Lab3_Ex2.FrameAnimation"
+            android:label="@string/ex2_title_label"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

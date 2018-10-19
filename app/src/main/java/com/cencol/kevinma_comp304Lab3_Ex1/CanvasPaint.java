@@ -138,7 +138,7 @@ public class CanvasPaint extends AppCompatActivity {
         this._clearCanvas();
 
         // default configs selected
-        RadioButton redLineColorRadioBtn = findViewById(R.id.redLineColorRadioBtn);
+        final RadioButton redLineColorRadioBtn = findViewById(R.id.redLineColorRadioBtn);
         redLineColorRadioBtn.setChecked(true);
 
         // attach event handlers
@@ -178,7 +178,7 @@ public class CanvasPaint extends AppCompatActivity {
             }
         });
 
-        RadioGroup lineColorRadioGroup = findViewById(R.id.lineColorRadioGroup);
+        final RadioGroup lineColorRadioGroup = findViewById(R.id.lineColorRadioGroup);
         lineColorRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int idChecked) {
@@ -196,7 +196,7 @@ public class CanvasPaint extends AppCompatActivity {
             }
         });
 
-        Spinner lineThicknessSpinner = findViewById(R.id.lineThicknessSpinner);
+        final Spinner lineThicknessSpinner = findViewById(R.id.lineThicknessSpinner);
         lineThicknessSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {

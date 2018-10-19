@@ -13,7 +13,7 @@
     </string-array>
     <string name="main_menu_clicked_msg">"Clicked on "</string>
 
-    <!--ex1 canvas paint activity-->
+    <!--ex1 canvas paint-->
     <string name="cpa_label">Lab3 Ex1 M18 - Kevin Ma</string>
     <string name="cpa_header1">Line Thickness</string>
     <string name="cpa_header2">Line Color</string>
@@ -27,7 +27,6 @@
     <string name="ex1_yellow_line_col_radio_btn">Yellow</string>
     <string name="ex1_cyan_line_col_radio_btn">Cyan</string>
 
-
     <string-array name="ex1_line_thickness_array">
         <item>5</item>
         <item>10</item>
@@ -37,4 +36,9 @@
         <item>30</item>
         <item>100</item>
     </string-array>
+
+    <!--ex2 frame by frame animation-->
+    <string name="ex2_title_label">Lab3 Ex2 M18 - Kevin Ma</string>
+    <string name="start_anim_txt">Start Animation</string>
+    <string name="stop_anim_txt">Stop Animation</string>
 </resources>
